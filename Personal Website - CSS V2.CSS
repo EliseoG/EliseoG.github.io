@@ -1,0 +1,783 @@
+/* Personal Website */
+
+/*  Box Sizing
+Every element on the page will use the border-box model. */
+1*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* General Custom Properties */
+:root {
+  --ff-primary: 'Source Sans Pro', sans-serif;
+  --ff-secondary:'Source Code Pro', monospace;
+
+  --fw-reg: 300;
+  --fw-bold: 900;
+
+  --clr-light: #fff;
+  --clr-dark: #303030;
+  --clr-accent: #16e0bd;
+
+  --clr-title-journey: rgb(61, 227, 227);
+  --clr-subtitle-journey: rgb(255, 210, 20);
+  --clr-location-journey: rgb(63, 77, 77);
+  --clr-description-journey: rgb(88, 115, 115);
+  --clr-seperator-journey: rgb(45, 56, 56);
+
+  --fs-h1: 2.5rem;
+  --fs-h2: 2.0rem;
+  --fs-h3: 1.4rem;
+  --fs-h4: 1.0rem;
+  --fs-body: 1.0rem;
+
+  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.30),
+        0.125em 0.125em 0.125em rgba(0, 0, 0, 0.15);
+  --bs-Subtitle: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.10);
+}
+
+/* Custom Properties for large screen */
+@media (min-width: 992px) {
+ :root {
+   --fs-h1: 2.5rem;
+   --fs-h2: 2.0rem;
+   --fs-h3: 1.5rem;
+   --fs-h4: 1.25rem;
+   --fs-body: 1.25rem;
+  }
+}
+#My-Story-Section {
+}
+
+ /* @media (min-width: 1500px) {
+  :root {
+    --fs-h1: 4.5rem;
+    --fs-h2: 3.75rem;
+    --fs-h3: 1.5rem;
+    --fs-h4: 1.35rem;
+    --fs-body: 1.125rem;
+  }
+} */
+
+/* General Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--clr-light);
+  color: var(--clr-dark);
+  margin 0;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%
+}
+
+section {
+  padding: 3em 2em;
+}
+
+strong {
+  font-weight: var(--fw-bold);
+}
+
+h1, h2, h3 {
+  line-height: 1.0;
+  margin: 0;
+}
+
+h1 { font-size: var(--fs-h1); }
+
+h2 { font-size: var(--fs-h2); }
+
+h3 { font-size: var(--fs-h3); }
+
+.Title {
+  margin-bottom: .25em;
+}
+
+.Subtitle {
+  margin: 0;
+  font-size: var(--fs-h3);
+}
+
+.Button:focus {
+    outline: 3px solid var(--clr-accent);
+    outline-offset: 3px;
+}
+
+.Button {
+  display: inline-block;
+  padding: .5em 2.5em;
+  background: var(--clr-accent);
+  color: var(--clr-dark);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: var(--fw-bold);
+  transition: transform 200ms ease-in-out;
+}
+
+.Button:hover {
+  transform: scale(1.1);
+}
+
+/* Navigation Section */
+
+/* ------------------------------------------ */
+
+#Home-Navigation-List {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--clr-dark);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: inline-grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-auto-rows: auto auto;
+  z-index: 3;
+
+}
+
+.Unordered-List-Item-Home {
+  border-right: 3px solid var(--clr-accent);
+  font-family: var(--ff-primary);
+}
+
+#Home-List-Item-1 {
+  border-left: 3px solid var(--clr-accent);
+}
+
+.Unordered-List-Item-Home > a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: .3em 10px;
+  text-decoration: none;
+}
+
+.Unordered-List-Item-Home > a:hover:not(.active) {
+  background-color: rgb(89, 92, 112);
+}
+
+/* Home Section */
+
+#Home-Title {
+  font-weight: var(--fw-reg);
+}
+
+#Home-Title strong {
+  display: block; /* Start on new line and take up whole width */
+}
+
+#Home-Subtitle{
+  background: var(--clr-accent);
+  font-family: var(--ff-secondary);
+  margin-bottom: 1em;
+  padding: 0.25em 1em;
+}
+
+#Home-Profile-Picture {
+  box-shadow: var(--bs);
+  /* width: auto;
+  height: auto; */
+}
+
+.Home {
+  position: relative;
+  padding-top: 0px;
+}
+
+  /* Specific Screen Sizes */
+@media (max-width: 600px) {
+  #Home-Title {
+    text-align: center;
+  }
+
+  #Home-Subtitle {
+    text-align: center;
+  }
+
+  #Home-Profile-Picture {
+    box-shadow: var(--bs);
+    width: auto;
+    height: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 600px) {
+  .Home {
+    display: grid;
+    width: min-content; /* Width of the grid is the smallest it can be without overflow of text */
+    margin: 0 auto;
+    grid-column-gap: 2em;
+    grid-template-areas:
+      "Image Title"
+      "Image Subtitle"; /* Not Used */
+    grid-template-columns: min-content max-content;
+  }
+
+  #Home-Profile-Picture {
+    grid-area: Image;
+    min-width: 250px;
+    position: relative;
+    z-index: 2; /* Position in front. */
+
+    border: 2px solid black;
+  }
+
+  #Home-Title {
+    grid-area: Title;
+    font-weight: var(--fw-reg);
+    padding-top: 20%;
+    position: relative;
+  }
+
+  #Home-Subtitle {
+    z-index: 1;
+    text-align: right;
+    grid-column: -1/1;
+    grid-row: 2;
+
+    padding-right: 5%;
+
+    position: absolute;
+    left: -1.5em;
+    right: 0em;
+    box-shadow: var(--bs-Subtitle);
+  }
+}
+
+@media (min-width: 992px) {
+  .Home {
+    display: grid;
+    width: min-content; /* Width of the grid is the smallest it can be without overflow of text */
+    margin: 0 auto;
+    grid-column-gap: 2em;
+    grid-template-areas:
+      "Image Title"
+      "Image Subtitle"; /* Not Used */
+    grid-template-columns: min-content max-content;
+  }
+
+  #Home-Profile-Picture {
+    grid-area: Image;
+    min-width: 250px;
+    position: relative;
+    z-index: 2; /* Position in front. */
+
+    border: 2px solid black;
+  }
+
+  #Home-Title {
+    grid-area: Title;
+    font-weight: var(--fw-reg);
+    padding-top: 12%;
+    position: relative;
+  }
+
+  #Home-Subtitle {
+    z-index: 1;
+    text-align: right;
+    grid-column: -1/1;
+    grid-row: 2;
+
+    padding-right: 2.3%;
+
+    position: absolute;
+    left: -1.5em;
+    right: 0em;
+    box-shadow: var(--bs-Subtitle);
+  }
+}
+
+/* My Story Section */
+
+.My-Story {
+   background-color: var(--clr-dark);
+   background-image: url(Image-Background.jpg);
+   background-size: cover;
+   background-blend-mode: soft-light;
+   color: var(--clr-light);
+   text-align: center;
+}
+
+#My-Story-Title {
+  /* color: var(--clr-accent); */
+  color: rgb(250, 255, 255);
+  position: relative;
+  font-size: var(--fs-h1);
+}
+
+/* Underline under the Title text - Decoration */
+#My-Story-Title::after {
+  content: '';
+  display: block;
+  width: 3em;
+  height: 1px;
+  margin: 0.5em auto 1em;
+  background: var(--clr-light);
+  opacity: 0.25;
+}
+
+@media (min-width: 600px) {
+  .Button {
+    font-size: .9rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .Button {
+    font-size: 1rem;
+  }
+}
+
+/*  My-Journey Section */
+
+#My-Journey-Title{
+  text-align: center;
+  font-size: var(--fs-h1);
+}
+
+#My-Journey-Subtitle{
+  background: var(--clr-accent);
+  font-family: var(--ff-secondary);
+  font-size: var(--fs-h3);
+  text-align: center;
+  padding: .10em .5em;
+}
+
+.My-Journey-Title {
+  font-size: var(--fs-h3);
+}
+.My-Journey-Title:hover {
+  color: rgb(85, 242, 156);
+}
+.My-Journey-Subtitle {
+  font-size: var(--fs-h4);
+}
+.My-Journey-Location {
+  font-size: var(--fs-h4);
+}
+.My-Journey-Description {
+  font-size: var(--fs-body);
+}
+
+#My-Journey-Link-1 {
+  text-decoration: none;
+  color: inherit;
+}
+
+#My-Journey-Link-2 {
+  text-decoration: none;
+  color: inherit;
+}
+
+#My-Journey-1-Image:hover {
+  opacity: 0.8;
+}
+#My-Journey-2-Image:hover {
+  opacity: 0.8;
+}
+
+/* Journey - All */
+
+@media (max-width: 700px) {
+  #My-Journey-Subtitle {
+    font-size: 1.2rem;
+  }
+  .My-Journey-Image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+  }
+  .My-Journey-Title {
+    margin-top: 0;
+    padding-top: 1em;
+    color: var(--clr-title-journey);
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0px;
+  }
+  .My-Journey-Subtitle {
+    color: var(--clr-subtitle-journey);
+    text-align: center;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .My-Journey-Location {
+    color: var(--clr-location-journey);
+    text-align: center;
+    font-weight: bold;
+    margin-top: 0px;
+  }
+  .My-Journey-Description {
+    color: var(--clr-description-journey);
+    text-align: left;
+  }
+
+  .My-Journey-Description::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    margin-top: 1em;
+    background: var(--clr-seperator-journey);
+    opacity: 0.05;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 992px) {
+  #My-Journey-Subtitle {
+  }
+  .My-Journey-Grid {
+    display: grid;
+    width: min-content; /* Width of the grid is the smallest it can be without overflow of text */
+    margin-top: 2em;
+    width: 100%;
+    grid-column-gap: 2em;
+    grid-template-areas:
+      "Image Title"
+      "Image Subtitle"
+      "Image Location"
+      "Image Description"; /* Not Used */
+    grid-template-columns: 40% auto;
+    grid-template-rows: 4em auto auto auto;
+  }
+
+  .My-Journey-Image-Link{
+    position: relative;
+    top: 1.7em;
+  }
+  .My-Journey-Image {
+    grid-area: Image;
+    border-radius: 10%;
+    min-width: 100px;
+  }
+  .My-Journey-Title{
+    grid-area: Title;
+    color: var(--clr-title-journey);
+    font-weight: bold;
+  }
+
+  .My-Journey-Subtitle{
+    grid-area: Subtitle;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: var(--clr-subtitle-journey);
+    font-weight: bold;
+    /* border: 2px solid black; */
+  }
+
+  .My-Journey-Location{
+    grid-area: Location;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: var(--clr-location-journey);
+    font-weight: bold;
+  }
+
+  .My-Journey-Description{
+    grid-area: Description;
+    color: var(--clr-location-description);
+  }
+
+  .My-Journey-Description::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 1px;
+    margin: 1em  0em 0em 0em;;
+    background: var(--clr-seperator-journey);
+    opacity: 0.05;
+  }
+}
+
+
+@media (min-width: 600px) and (max-width: 830px) {
+  #My-Journey-2-Subtitle{
+    position: relative;
+    top: 2.5em;
+  }
+  #My-Journey-2-Location{
+    position: relative;
+    top: 2.6em;
+  }
+  #My-Journey-2-Description{
+    position: relative;
+    top: 2.9em;
+  }
+}
+@media (min-width: 992px) {
+  .My-Journey-Grid {
+    display: grid;
+    width: min-content; /* Width of the grid is the smallest it can be without overflow of text */
+    margin-top: 2em;
+    width: 100%;
+    grid-column-gap: 2em;
+    grid-template-areas:
+      "Image Body";
+    grid-template-columns: 40% auto;
+  }
+
+  .My-Journey-Image-Link {
+    grid-area: Image;
+    position: relative;
+    top: 1.9em;
+    height: 200px;
+    border-radius: 10%;
+  }
+  .My-Journey-Image {
+    border-radius: 10%;
+    min-width: 100px;
+  }
+
+  .My-Journey-Title{
+    grid-area: Body;
+    color: var(--clr-title-journey);
+    font-weight: bold;
+    margin-top: 1.4em;
+  }
+
+  .My-Journey-Subtitle{
+    grid-area: Body;
+    color: var(--clr-subtitle-journey);
+    font-weight: bold;
+    margin-top: 4em;
+  }
+  .My-Journey-Location{
+    grid-area: Body;
+    color: var(--clr-location-journey);
+    font-weight: bold;
+    margin-top: 6em;
+  }
+  .My-Journey-Description{
+    grid-area: Body;
+    color: var(--clr-location-description);
+    margin-top: 8.6em;
+  }
+}
+
+/* My Projects */
+
+.My-Projects {
+  background-color: rgb(255, 28, 100);
+}
+
+#My-Projects-Title {
+  font-size: var(--fs-h1);
+  color: rgb(250, 255, 255);
+  text-align: center;
+  font-size: var(--fs-h1);
+}
+
+#My-Projects-Subtitle {
+  color: rgb(250, 255, 255);
+  text-align: center;
+  background-color: rgb(10, 94, 94);
+  padding: .30em .8em;
+  margin-bottom: 2em;
+  font-family: var(--ff-secondary);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+}
+
+
+#My-Projects-Image-1:hover {
+  opacity: 0.7;
+}
+#My-Projects-Image-2:hover {
+  opacity: 0.7;
+}
+#My-Projects-Image-3:hover {
+  opacity: 0.7;
+}
+#My-Projects-Image-4:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 700px) {
+  #My-Projects-Image-5 {
+    display: none;
+  }
+  #My-Projects-Image-4 {
+    /* margin-bottom: 2em; */
+  }
+  #My-Projects-Image-3 {
+    margin-bottom: 2em;
+  }
+  #My-Projects-Image-2 {
+    margin-bottom: 2em;
+  }
+  #My-Projects-Image-1 {
+    margin-bottom: 2em;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 992px) {
+  #My-Projects-Subtitle {
+    font-size: 1.65rem;
+  }
+
+  .My-Projects-Grid {
+    display: grid;
+    grid-template-areas:
+    "Image-1 Image-2"
+    "Image-3 Image-4";
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    row-gap: 1em;
+    column-gap: 1em;
+    width: 100%;
+  }
+
+  #My-Projects-Image-5 {
+    display: none;
+  }
+
+  #My-Projects-Image-4 {
+    grid-area: Image-4;
+    height: 100%;
+  }
+  #My-Projects-Image-3 {
+    grid-area: Image-3;
+  }
+  #My-Projects-Image-2 {
+    grid-area: Image-2;
+  }
+  #My-Projects-Image-1 {
+    grid-area: Image-1;
+  }
+}
+
+@media (min-width: 992px) {
+  #My-Projects-Subtitle {
+    font-size: 1.65rem;
+  }
+
+  .My-Projects-Grid {
+    display: grid;
+    grid-template-areas:
+    "Image-1 Image-2 Image-3"
+    "Image-4 Image-5 Image-6";
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    row-gap: 1em;
+    column-gap: 1em;
+    width: 100%;
+  }
+
+  #My-Projects-Image-5 {
+    grid-area: Image-5;
+    visibility: hidden;
+  }
+  #My-Projects-Image-4 {
+    grid-area: Image-4;
+    height: 100%;
+  }
+  #My-Projects-Image-3 {
+    grid-area: Image-3;
+  }
+  #My-Projects-Image-2 {
+    grid-area: Image-2;
+  }
+  #My-Projects-Image-1 {
+    grid-area: Image-1;
+  }
+}
+
+/* Contact Me */
+
+.Lets-Connect {
+  /* border: 18px solid rgb(112, 6, 145); */
+}
+
+.Lets-Connect a {
+  color: var(--clr-accent);
+}
+
+.Lets-Connect a:hover {
+  opacity: 0.7;
+}
+
+#Lets-Connect-Social-Media-Links {
+  list-style-type: none;
+  margin-top: 3em;
+  padding: 0em;
+  display: flex;
+  justify-content: center;
+}
+
+.Lets-Connect-Icon {
+  padding: 0em 1em;
+  font-size: 6em;
+}
+
+#Lets-Connect-Title{
+  text-align: center;
+  font-size: var(--fs-h1);
+}
+
+#Lets-Connect-Subtitle{
+  background: var(--clr-accent);
+  font-family: var(--ff-secondary);
+  text-align: center;
+  padding: .10em .5em;
+  font-size: var(--fs-h3);
+}
+
+#Lets-Connect-Email-1 {
+  text-align: center;
+  background-color: var(--clr-dark);
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-reg);
+  font-size: var(--fs-h3);
+  color: rgb(250, 255, 255);
+}
+
+@media (max-width: 700px) {
+  #Lets-Connect-Subtitle {
+    font-size: 1.2rem;
+  }
+  #Lets-Connect-Email-1 {
+    font-size: 1.24rem;
+  }
+
+}
+
+@media (min-width: 700px) {
+  #Lets-Connect-Subtitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  #Lets-Connect-Subtitle {
+    font-size: 1.45rem;
+  }
+}
+
+
+
+
+
+
+/* Home - My Story - My Journey - My Projects - Contact Me */
