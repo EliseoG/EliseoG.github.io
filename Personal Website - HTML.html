@@ -1,0 +1,146 @@
+<!-- Personal Website - HTML -->
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset = "uft-8">
+    <meta name = "viewport" content  ="width = device - width, intital-scale = 1">
+    <meta name = "Keywords" content = "Eliseo, Garcia, Software, Engineer, LinkedIn ">
+    <meta name = "description" content = "Eliseo Garcia's personal website.">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,400,900&display=swap" rel="stylesheet">
+    <script type = "text/javascript" src = "Personal Website - JavaScript.js"> </script>
+    <link rel = "stylesheet" href = "Personal Website - CSS V2.css">
+    <title> Eliseo Garcia </title>
+  </head>
+
+  <body>
+
+    <!-- Home Menu -->
+    <section class  = "Menu" id = "Home-Menu">
+      <!-- Home Menu Navigation Button-->
+      <!-- <button class = "Button" id = "Home-Button" aria-label = "Toggle-Navigation"> </button> -->
+      <!-- <nav class = "Navigation" id = 'Home-Navigation'> -->
+          <ul class = "Unordered-List" id = "Home-Navigation-List">
+            <li class = "Unordered-List-Item-Home" id = "Home-List-Item-1"> <a onclick = "homeListItem1()"  id = "Home-List-Item-Home">Home</a></li>
+            <li class = "Unordered-List-Item-Home" id = "Home-List-Item-2"> <a onclick = "homeListItem2()"  id = "Home-List-Item-My-Story">My Story</a></li>
+            <li class = "Unordered-List-Item-Home" id = "Home-List-Item-3"> <a onclick = "homeListItem3()"  id = "Home-List-Item-My-Journey">My Journey</a></li>
+            <li class = "Unordered-List-Item-Home" id = "Home-List-Item-4"> <a onclick = "homeListItem4()"  id = "Home-List-Item-My-Projects">My Projects</a></li>
+            <li class = "Unordered-List-Item-Home" id = "Home-List-Item-5"> <a onclick = "homeListItem5()"  id = "Home-List-Item-Lets-Connect">Let's Connect</a></li>
+          </ul>
+      <!-- </nav> -->
+    </section>
+
+    <!-- Home -->
+    <section class = "Home"; id = "Home-Section">
+      <!-- <header> -->
+        <h1 class = "Title" id = "Home-Title">Hey, I am <strong id = "Home-Title-2">Eliseo Garcia</strong> </h1>
+        <p class = "Subtitle" id = "Home-Subtitle">Get To Know Me!</p>
+      <!-- </header> -->
+
+      <img class = "Image" id = "Home-Profile-Picture" src = "Profile-Picture.jpeg" alt = "Profile Picture">
+    </section>
+
+    <!-- My Story -->
+    <section class = "My-Story" id = "My-Story-Section">
+      <!-- <header> -->
+        <h2 class = "Title" id = "My-Story-Title">Here's My Story</h2>
+      <!-- </header> -->
+        <a onclick = "myStoryButton()" href = "#Start" class = "Button" id = "My-Story-Button">Start!</a>
+    </section>
+
+    <!-- My Journey -->
+    <section class = "My-Journey" id = "My-Journey-Section">
+      <!-- <header> -->
+        <h2 class  = "Title" id = "My-Journey-Title" >My Journey</h2>
+        <p class = "Subtitle" id = "My-Journey-Subtitle">— From Start to Passion —<p>
+      <!-- </header> -->
+
+      <div class = "My-Journey-Grid" id = "My-Journey-Grid-2">
+        <a target = "_blank" href = "https://www.uncc.edu/" class = "My-Journey-Image-Link"> <img class = "My-Journey-Image" Id = "My-Journey-2-Image" src = "Image - UNCC.jpg" alt = "UNCC Picture"> </a>
+        <p class = "My-Journey-Title" id = "My-Journey-2-Title"> <a target = "_blank" href = "https://www.uncc.edu/" id = "My-Journey-Link-2"> University of North Carolina at Charlotte </a> </p>
+        <p class = "My-Journey-Subtitle" id = "My-Journey-2-Subtitle"> Class of 2021 </p>
+        <p class = "My-Journey-Location" id = "My-Journey-2-Location"> Charlotte, NC </p>
+        <p class = "My-Journey-Description" id = "My-Journey-2-Description"> I am currently a UNCC student pursuing a B.S. in Computer Science. A concentration in AI + Robotics is my current interest as it allows me to incororate both
+                                            art in the form of physical design and software for functional design. </p>
+      </div>
+
+      <div class = "My-Journey-Grid" id = "My-Journey-Grid-1">
+        <a target = "_blank" href = "https://www.cpcc.edu/" class = "My-Journey-Image-Link"> <img class = "My-Journey-Image" Id = "My-Journey-1-Image" src = "Image - CPCC.jpg" alt = "CPCC Picture"> </a>
+        <p class = "My-Journey-Title" id = "My-Journey-1-Title"> <a target = "_blank" href = "https://www.cpcc.edu/" id = "My-Journey-Link-1"> Central Piedmont CC </a> </p>
+        <p class = "My-Journey-Subtitle" id = "My-Journey-1-Subtitle"> 2018-2020 </p>
+        <p class = "My-Journey-Location" id = "My-Journey-1-Location"> Charlotte, NC </p>
+        <p class = "My-Journey-Description" id = "My-Journey-1-Description"> I am grateful for my time and experiences at Central Piedmnont CC. It was here where I started to express my passion for technology
+                                            and was given the opportunity to learn more about my interests. A highly emphasized arts education along with an excellent engineering
+                                            core allowed me to further develop my interest for visually beautiful yet highly functional engineering and design. </p>
+      </div>
+    </section>
+
+    <!-- My Projects -->
+    <section class = "My-Projects" id = "My-Projects-Section">
+      <!-- <Header> -->
+        <h2 class = "Title" id = "My-Projects-Title"> My Projects </h2>
+        <h2 class = "Subtitle" id = "My-Projects-Subtitle">— Art + Engineering —</h2>
+      <!-- </Header> -->
+
+      <div class = "My-Projects-Grid">
+
+        <!-- Project - 1 -->
+        <img onclick = "myProjectsImage1()" class = "Image" id = "My-Projects-Image-1" src = "Image - Project.png" alt = "Image - Project">
+
+        <!-- Project - 2 -->
+        <img onclick = "myProjectsImage2()" class = "Image" id = "My-Projects-Image-2" src = "Image - Project.png" alt = "Image - Project">
+
+        <!-- Project - 3 -->
+        <img onclick = "myProjectsImage3()" class = "Image" id = "My-Projects-Image-3" src = "Image - Project.png" alt = "Image - Project">
+
+        <!-- Project - 4 -->
+        <img onclick = "myProjectsImage4()" class = "Image" id = "My-Projects-Image-4" src = "Image - Coming Soon.png" alt = "Image - Project">
+        <!-- <a target = "_blank" href = "https://github.com/SenpaiNoticedMe" id = "My-Projects-Image-4-Link"> <img class = "Image" id = "My-Projects-Image-4" src = "Image - Coming Soon.png" alt = "Image - Project"> </a> -->
+
+        <!-- Project - 5 -->
+        <img class = "Image" id = "My-Projects-Image-5" src = "Image - Project.png" alt = "Image - Project">
+
+        <!-- <p class = "Body" id = "My-Journey-Item-Body"> </p> -->
+      </div>
+    </section>
+
+    <!-- Let's Connect -->
+    <section class = "Lets-Connect" id = "Lets-Connect-Section">
+      <!-- <header> -->
+        <h2 class = "Title" id = "Lets-Connect-Title">Let's Connect</h2>
+        <p class = "Subtitile" id = "Lets-Connect-Subtitle">— Bribes in the form of Korean BBQ are always welcome —</p>
+      <!-- </header> -->
+
+      <!-- Social Media Links -->
+      <ul class = "Unordered List" id = "Lets-Connect-Social-Media-Links">
+        <li class = "Lets-Connect-Icon" id = "GitHub">
+          <a class = "Link" id = "Link-1" target = "_blank" href = "https://github.com/SenpaiNoticedMe">
+            <i class="lab la-github"></i>
+          </a>
+        </li>
+
+        <li class = "Lets-Connect-Icon" id = "LinkedIn">
+          <a class = "Link" id = "Link-1" target = "_blank" href = "https://www.linkedin.com/in/eliseo-garcia">
+            <i class="lab la-linkedin"></i>
+          </a>
+        </li>
+      </ul>
+
+      <p class = "Subtitle" id = "Lets-Connect-Email-1">Send me an email! — egarci28@uncc.edu</p>
+      <!-- <form class = "Text-Box" id = "Lets-Connect-Form">
+        <label for = "Name" >My Name</label>
+        <input type = "text" id = "Lets-Connect-Form-Name" name = "First-Name">
+        <br>
+        <label for = "Email" >My Email</label>
+        <input type = "email" id = "Lets-Connect-Form-Email" name = "Email">
+        <br>
+        <label for = "Description" >Hey! Let's Connect!</label>
+        <input type = "text" id = "Lets-Connect-Form-Name" name = "Description">
+        <br>
+      </form> -->
+    </section>
+
+  </body>
+</html>
